@@ -3,7 +3,7 @@ services:
     build: ./requirements/nginx/.
     container_name: nginx
     ports:
-      - 443:443
+      # - 443:443
       - 80:80
     volumes:
       - /home/ziko/data/web:/var/www/html
@@ -14,6 +14,12 @@ services:
     container_name: wp-php
     volumes:
       - /home/ziko/data/web:/var/www/html
+
+  mariadb:
+    build: ./requirements/mariadb/.
+    container_name: mariadb
+      # - /home/ziko/data/db:/var/www/html
+
 
 # networks:
 #   docker-network:
