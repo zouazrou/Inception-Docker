@@ -7,20 +7,22 @@ services:
       - 80:80
     volumes:
       - /home/ziko/data/web:/var/www/html
-    # networks:
-    #   - docker-network
+    networks:
+      inception:
   wordpress:
     build: ./requirements/wordpress/.
     container_name: wp-php
     volumes:
       - /home/ziko/data/web:/var/www/html
+    networks:
+      inception:
 
   mariadb:
     build: ./requirements/mariadb/.
     container_name: mariadb
       # - /home/ziko/data/db:/var/www/html
+    networks:
+      inception:
 
-
-# networks:
-#   docker-network:
-#     name: docker-network
+networks:
+  inception:
