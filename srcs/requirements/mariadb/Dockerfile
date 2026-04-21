@@ -4,5 +4,9 @@ COPY ./tools/setup.sh /tmp/setup.sh
 
 RUN /tmp/setup.sh
 
-# CMD ["_safe"]
-CMD ["mysqld_safe"]
+COPY 50-server.cnf /etc/mysql/mariadb.conf.d/.
+
+RUN mkdir /run/mysqld
+
+CMD ["mysqld"]
+# CMD ["mysqld_safe"]
