@@ -6,4 +6,8 @@ RUN /tmp/setup.sh
 
 COPY ./www.conf /etc/php/8.2/fpm/pool.d/www.conf 
 
-CMD ["php-fpm8.2", "-F"]
+COPY ./tools/wp-cli.sh .
+
+RUN chmod +x wp-cli.sh
+
+CMD ["./wp-cli.sh"]
