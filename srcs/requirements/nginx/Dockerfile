@@ -1,5 +1,7 @@
 FROM debian:12
 
+RUN apt update -y && apt install nginx openssl -y 
+
 COPY ./tools/setup.sh /tmp/setup.sh
 
 RUN /tmp/setup.sh
