@@ -2,8 +2,6 @@ FROM debian:12
 
 RUN apt update -y && apt install mariadb-server -y
 
-RUN /tmp/setup.sh
-
 COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/.
 
 COPY ./tools/init.sql /etc/mysql/init.sql
