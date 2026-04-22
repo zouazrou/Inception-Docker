@@ -3,8 +3,7 @@ services:
     build: ./requirements/nginx/.
     container_name: nginx
     ports:
-      # - 443:443
-      - 80:80
+      - 443:443
     volumes:
       - /home/ziko/data/web:/var/www/html
     networks:
