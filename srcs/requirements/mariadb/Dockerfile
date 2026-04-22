@@ -1,6 +1,6 @@
 FROM debian:12
 
-COPY ./tools/setup.sh /tmp/setup.sh
+RUN apt update -y && apt install mariadb-server -y
 
 RUN /tmp/setup.sh
 
