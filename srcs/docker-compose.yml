@@ -15,7 +15,7 @@ services:
   wordpress:
     restart: always
     build: ./requirements/wordpress/.
-    container_name: wp-php
+    container_name: wordpress
     image: wordpress
     volumes:
       - wordpress_files:/var/www/html
