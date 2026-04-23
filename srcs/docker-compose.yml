@@ -1,5 +1,6 @@
 services:
   nginx:
+    restart: always
     build: ./requirements/nginx/.
     container_name: nginx
     ports:
@@ -9,6 +10,7 @@ services:
     networks:
       inception:
   wordpress:
+    restart: always
     build: ./requirements/wordpress/.
     container_name: wp-php
     volumes:
@@ -17,6 +19,7 @@ services:
       inception:
 
   mariadb:
+    restart: always
     build: ./requirements/mariadb/.
     container_name: mariadb
       # - /home/ziko/data/db:/var/www/html
