@@ -12,8 +12,7 @@ services:
       inception:
     env_file:
       - .env
-    # depends_on:
-    #   - wordpress
+  
   wordpress:
     restart: always
     build: ./requirements/wordpress/.
@@ -25,9 +24,7 @@ services:
       inception:
     env_file:
       - .env
-    # depends_on:
-    #   mariadb:
-    #     condition: service_healthy
+
   mariadb:
     restart: always
     build: ./requirements/mariadb/.
@@ -39,14 +36,6 @@ services:
       inception:
     env_file:
       - .env
-    # healthcheck:
-    #   test: ["CMD", "mariadb-admin", "ping", "-h", "localhost"]
-    #   # test: ["CMD", "mariadb-admin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASS}"]
-    #   interval: 5s
-    #   timeout: 5s
-    #   retries: 10
-    #   # retries: 5
-    #   start_period: 10s
 
 networks:
   inception:
