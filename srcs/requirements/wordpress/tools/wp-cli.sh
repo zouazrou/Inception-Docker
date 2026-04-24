@@ -1,36 +1,24 @@
 #!/bin/bash
+sleep 10 # Give MariaDB a head start
 
-# Move to dir where the website files must be live
 cd /var/www/html
 
-# Downloads WP-CLI
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x wp-cli.phar
+# ONLY run if WordPress is not already configured
+if [ ! -f "wp-config.php" ]; then
+    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    chmod +x wp-cli.phar
+    mv wp-cli.phar /usr/local/bin/wp
 
-# download WordPress
-./wp-cli.phar core download --allow-root
+    wp core download --allow-root
+    
+    wp config create --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASS --dbhost=mariadb --allow-root
+    
+    wp core install --url=$DOMAIN_NAME --title=$SITE_TITLE --admin_user=$WP_ADMIN_USER --admin_password=$WP_ADMIN_PASS --admin_email=$WP_ADMIN_EMAIL --allow-root
+    
+    wp user create $WP_USER_NAME $WP_USER_EMAIL --role=author --user_pass=$WP_USER_PASS --allow-root
+fi
 
-# Fill `wp-config.php` that tells wp how to talk to DB container
-./wp-cli.phar config create     \
-            --dbname=$DB_NAME  \
-            --dbuser=$DB_USER     \
-            --dbpass=$DB_PASS   \
-            --dbhost=mariadb --allow-root 
+# Create the run directory for PHP (common reason for exit code 78)
+mkdir -p /run/php
 
-# Install wp & Create the Administrator
-./wp-cli.phar core install                  \
-            --url=$DOMAIN_NAME              \
-            --title=$SITE_TITLE             \
-            --admin_user=$WP_ADMIN_USER     \
-            --admin_password=$WP_ADMIN_PASS \
-            --admin_email=$WP_ADMIN_EMAIL   \
-            --allow-root
-# Create the User
-./wp-cli.phar user create \
-    $WP_USER_NAME $WP_USER_EMAIL \
-    --role=author \
-    --user_pass=$WP_USER_PASS \
-    --allow-root
-
-# Run PHP-FPM in foreground
-php-fpm8.2 -F
+exec php-fpm8.2 -F

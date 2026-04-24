@@ -4,11 +4,11 @@ RUN apt update -y && apt install mariadb-server -y
 
 COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
-COPY ./tools/init.sql /etc/mysql/init.sql
+COPY ./tools/setup.sh /usr/local/bin/setup.sh
+RUN chmod +x /usr/local/bin/setup.sh
 
-RUN mkdir /run/mysqld && \
-    mysql_install_db && \
-    chown -R mysql:mysql /run/mysqld && \
-    chown -R mysql:mysql /var/lib/mysql
+RUN mkdir -p /run/mysqld && chown -R mysql:mysql /run/mysqld
 
-CMD ["mysqld"]
+RUN mysql_install_db --user=mysql --datadir=/var/lib/mysql
+
+ENTRYPOINT ["/usr/local/bin/setup.sh"]
