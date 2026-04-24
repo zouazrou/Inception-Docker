@@ -20,4 +20,4 @@ down:
 fclean:
 	$(DC) -f $(DC_FILE) down -v --rmi all
 
-.PHONY: all up build list down
+.PHONY: all up build list down fclean
