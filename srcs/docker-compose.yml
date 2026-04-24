@@ -12,6 +12,8 @@ services:
       inception:
     env_file:
       - .env
+    depends_on:
+      - wordpress
   wordpress:
     restart: always
     build: ./requirements/wordpress/.
@@ -23,6 +25,8 @@ services:
       inception:
     env_file:
       - .env
+    depends_on:
+      - mariadb
   mariadb:
     restart: always
     build: ./requirements/mariadb/.
