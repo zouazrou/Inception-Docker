@@ -12,21 +12,21 @@ Set up a complete infrastructure using Docker Compose, creating and managing mul
 ## Instructoins
 1. Clone the repository and enter the folder:
 ```bash
-    git clone https://github.com/zouazrou/INCEPTION.git
-    cd INCEPTION
+git clone https://github.com/zouazrou/INCEPTION.git
+cd INCEPTION
 ```
 2. Build image and Run containers :
 ```bash
-    make all
+make all
 ```
 3. Stop and Remove containers
 ```bash
-    make clean
+make clean
 ```
 
 4. Remove containers, images, volumes and network 
 ```bash
-    make fclean
+make fclean
 ```
 
 ## Resources
