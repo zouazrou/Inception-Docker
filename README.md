@@ -31,7 +31,7 @@ make fclean
 
 ## Resources
 
-* *Docker Deep Dive* by Nigel Poulton
+* ***Docker Deep Dive*** by *Nigel Poulton*
 * [Docker Training Course for the Absolute Beginner](https://kodekloud.com/courses/docker-for-the-absolute-beginner)
 * [the reference documentation for the Docker](https://docs.docker.com/reference/)
 * [Nginx Essentials: Installation and Configuration Troubleshooting](https://www.digitalocean.com/community/tutorials/nginx-essentials-installation-and-configuration-troubleshooting)
