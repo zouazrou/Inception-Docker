@@ -1,4 +1,4 @@
-This project has been created as part of the 42 curriculum by **<zouazrou>**.
+This project has been created as part of the 42 curriculum by **zouazrou**.
 
 ## Description
 Set up a complete infrastructure using Docker Compose, creating and managing multiple containerized services (LEMP stack) consisting of Linux, Nginx (pronounced "Engine-X") with SSL/TLS, MariaDB, and WordPress with PHP-FPM.
@@ -31,7 +31,7 @@ make fclean
 
 ## Resources
 
-* `Docker Deep Dive book`
+* *Docker Deep Dive* by Nigel Poulton
 * [Docker Training Course for the Absolute Beginner](https://kodekloud.com/courses/docker-for-the-absolute-beginner)
 * [the reference documentation for the Docker](https://docs.docker.com/reference/)
 * [Nginx Essentials: Installation and Configuration Troubleshooting](https://www.digitalocean.com/community/tutorials/nginx-essentials-installation-and-configuration-troubleshooting)
