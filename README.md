@@ -1,5 +1,4 @@
-
-This project has been created as part of the 42 curriculum by <zouazrou>.
+This project has been created as part of the 42 curriculum by **zouazrou**.
 
 # Description
 Set up a complete infrastructure using Docker Compose, creating and managing multiple containerized services (LEMP stack) consisting of Linux, Nginx (pronounced "Engine-X") with SSL/TLS, MariaDB, and WordPress with PHP-FPM.
