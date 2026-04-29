@@ -2,6 +2,12 @@ This project has been created as part of the 42 curriculum by **zouazrou**.
 
 ## Description
 Set up a complete infrastructure using Docker Compose, creating and managing multiple containerized services (LEMP stack) consisting of Linux, Nginx (pronounced "Engine-X") with SSL/TLS, MariaDB, and WordPress with PHP-FPM.
+### Virtual Machines vs Docker
+* `Virtual Machines` are virtualization technology that emulate **virtual new computer**,including it own Kernal, Desktop applications, os utilities and etc, that make it large, and hard to managment and monitoring.
+* while `Docker` is **modern containerization technology** to create isolated environment for one or few applications but without the need entire OS (Kernal, utilities, etc) with only application's requirements(libraries, binaries, and configuration files). Unlike VMs, containers share the same Host kernal. these advantanges making them much more lightweight, faster to start, and efficient than VMs.
+### Secrets vs Environment Variables
+### Docker Network vs Host Network
+### Docker Volumes vs Bind Mounts
 
 ## Features
 * **NGINX**: Secure web server using TLSv1.3.
