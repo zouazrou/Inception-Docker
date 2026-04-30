@@ -11,7 +11,8 @@ services:
     networks:
       inception:
     env_file:
-      - .env
+      - path : .env
+        required: true
   
   wordpress:
     restart: always
@@ -23,7 +24,8 @@ services:
     networks:
       inception:
     env_file:
-      - .env
+      - path : .env
+        required: true
 
   mariadb:
     restart: always
@@ -35,7 +37,8 @@ services:
     networks:
       inception:
     env_file:
-      - .env
+      - path : .env
+        required: true
 
 networks:
   inception:
