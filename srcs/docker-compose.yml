@@ -64,6 +64,19 @@ services:
       - path : .env
         required: true
 
+  static-website:
+    restart: always
+    build: ./requirements/bonus/static-website/.
+    container_name: static-website
+    image: static-website:1337
+    ports:
+      - 80:80
+    networks:
+      inception:
+    env_file:
+      - path : .env
+        required: true
+
 networks:
   inception:
     driver: bridge
