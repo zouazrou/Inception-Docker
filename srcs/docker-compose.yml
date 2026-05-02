@@ -40,6 +40,30 @@ services:
       - path : .env
         required: true
 
+  # redis:
+  #   restart: always
+  #   build: ./requirements/redis/.
+  #   container_name: redis
+  #   image: redis:1337
+  #   networks:
+  #     inception:
+  #   env_file:
+  #     - path : .env
+  #       required: true
+
+  adminer:
+    restart: always
+    build: ./requirements/adminer/.
+    container_name: adminer
+    image: adminer:1337
+    ports:
+      - 8080:8080
+    networks:
+      inception:
+    env_file:
+      - path : .env
+        required: true
+
 networks:
   inception:
     driver: bridge
