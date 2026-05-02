@@ -53,7 +53,7 @@ services:
 
   adminer:
     restart: always
-    build: ./requirements/adminer/.
+    build: ./requirements/bonus/adminer/.
     container_name: adminer
     image: adminer:1337
     ports:
