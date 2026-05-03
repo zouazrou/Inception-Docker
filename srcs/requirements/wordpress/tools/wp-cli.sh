@@ -18,6 +18,12 @@ if [ ! -f "wp-config.php" ]; then
     wp user create $WP_USER_NAME $WP_USER_EMAIL --role=author --user_pass=$WP_USER_PASS --allow-root
 fi
 
+# Configure Redis for WordPress
+wp config set WP_REDIS_HOST redis --allow-root
+wp config set WP_REDIS_PORT 6379 --allow-root
+wp config set WP_REDIS_PASSWORD $REDIS_PASS --allow-root
+wp redis enable --allow-root
+
 # Create the run directory for PHP (common reason for exit code 78)
 mkdir -p /run/php
 
