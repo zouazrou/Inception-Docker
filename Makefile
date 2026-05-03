@@ -6,6 +6,7 @@ all : up
 up :
 	mkdir -p /home/$(USER)/data/db
 	mkdir -p /home/$(USER)/data/web
+	mkdir -p /home/$(USER)/data/backups
 	$(DC) -f $(DC_FILE) up -d
 
 build :

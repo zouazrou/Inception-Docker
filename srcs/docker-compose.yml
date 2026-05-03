@@ -42,7 +42,7 @@ services:
 
   # redis:
   #   restart: always
-  #   build: ./requirements/redis/.
+  #   build: ./requirements/bonus/redis/.
   #   container_name: redis
   #   image: redis:1337
   #   networks:
@@ -76,6 +76,32 @@ services:
     env_file:
       - path : .env
         required: true
+  # ftp:
+  #   restart: always
+  #   build: ./requirements/bonus/ftp/.
+  #   container_name: ftp
+  #   image: ftp:1337
+  #   ports:
+  #     - 21:21
+  #     - 21100-21110:21100-21110
+  #   networks:
+  #     inception:
+  #   env_file:
+  #     - path : .env
+  #       required: true
+
+  backup:
+    restart: always
+    build: ./requirements/bonus/backup/.
+    container_name: backup
+    image: backup:1337
+    volumes:
+      - db_backups:/backups
+    networks:
+      inception:
+    env_file:
+      - path : .env
+        required: true
 
 networks:
   inception:
@@ -95,3 +121,10 @@ volumes:
       type: 'none'
       o: 'bind'
       device: '/home/${USER}/data/db'
+
+  db_backups:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/${USER}/data/backups'
