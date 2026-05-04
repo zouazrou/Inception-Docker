@@ -9,7 +9,7 @@ services:
     volumes:
       - wordpress_files:/var/www/html
     networks:
-      inception:
+      - inception
     env_file:
       - path : .env
         required: true
@@ -22,7 +22,7 @@ services:
     volumes:
       - wordpress_files:/var/www/html
     networks:
-      inception:
+      - inception
     env_file:
       - path : .env
         required: true
@@ -35,21 +35,21 @@ services:
     volumes:
       - mariadb_data:/var/lib/mysql
     networks:
-      inception:
+      - inception
     env_file:
       - path : .env
         required: true
 
-  # redis:
-  #   restart: always
-  #   build: ./requirements/bonus/redis/.
-  #   container_name: redis
-  #   image: redis:1337
-  #   networks:
-  #     inception:
-  #   env_file:
-  #     - path : .env
-  #       required: true
+  redis:
+    restart: always
+    build: ./requirements/bonus/redis/.
+    container_name: redis
+    image: redis:1337
+    networks:
+      - inception
+    env_file:
+      - path : .env
+        required: true
 
   adminer:
     restart: always
@@ -59,7 +59,7 @@ services:
     ports:
       - 8080:8080
     networks:
-      inception:
+      - inception
     env_file:
       - path : .env
         required: true
@@ -72,7 +72,7 @@ services:
     ports:
       - 80:80
     networks:
-      inception:
+      - inception
     env_file:
       - path : .env
         required: true
@@ -85,7 +85,7 @@ services:
   #     - 21:21
   #     - 21100-21110:21100-21110
   #   networks:
-  #     inception:
+  #     - inception
   #   env_file:
   #     - path : .env
   #       required: true
@@ -98,7 +98,7 @@ services:
     volumes:
       - db_backups:/backups
     networks:
-      inception:
+      - inception
     env_file:
       - path : .env
         required: true
