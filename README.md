@@ -41,4 +41,4 @@ make fclean
 * [Docker Training Course for the Absolute Beginner](https://kodekloud.com/courses/docker-for-the-absolute-beginner)
 * [the reference documentation for the Docker](https://docs.docker.com/reference/)
 * [Nginx Essentials: Installation and Configuration Troubleshooting](https://www.digitalocean.com/community/tutorials/nginx-essentials-installation-and-configuration-troubleshooting)
-* [VSFTPD.CONF] (http://vsftpd.beasts.org/vsftpd_conf.html)
+* [vsftpd.conf - config file for vsftpd](http://vsftpd.beasts.org/vsftpd_conf.html)
