@@ -18,11 +18,16 @@ if [ ! -f "wp-config.php" ]; then
     wp user create $WP_USER_NAME $WP_USER_EMAIL --role=author --user_pass=$WP_USER_PASS --allow-root
 fi
 
-# Configure Redis for WordPress
-wp plugin install redis-cache --activate --allow-root
+# BONUS: Redis caching setup
+# 1. Tell WordPress where the Redis server is
 wp config set WP_REDIS_HOST $WP_REDIS_HOST --allow-root
-wp config set WP_REDIS_PORT $WP_REDIS_PORT --allow-root
-wp config set WP_REDIS_PASSWORD $WP_REDIS_PASSWORD --allow-root
+wp config set WP_REDIS_PORT $WP_REDIS_PORT --raw --allow-root
+wp config set WP_CACHE true --raw --allow-root
+
+# 2. Install the Redis plugin
+wp plugin install redis-cache --activate --allow-root
+
+# 3. Turn on the cache
 wp redis enable --allow-root
 
 # Create the run directory for PHP (common reason for exit code 78)
