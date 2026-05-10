@@ -76,19 +76,21 @@ services:
     env_file:
       - path : .env
         required: true
-  # ftp:
-  #   restart: always
-  #   build: ./requirements/bonus/ftp/.
-  #   container_name: ftp
-  #   image: ftp:1337
-  #   ports:
-  #     - 21:21
-  #     - 21100-21110:21100-21110
-  #   networks:
-  #     - inception
-  #   env_file:
-  #     - path : .env
-  #       required: true
+  ftp:
+    restart: always
+    build: ./requirements/bonus/ftp-server/.
+    container_name: ftp
+    image: ftp:1337
+    ports:
+      - 21:21
+      - 30000-30009:30000-30009
+    volumes:
+      - wordpress_files:/var/www/html
+    networks:
+      - inception
+    env_file:
+      - path : .env
+        required: true
 
   backup:
     restart: always
