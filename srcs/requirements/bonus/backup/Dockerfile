@@ -10,4 +10,4 @@ RUN echo "*/1 * * * * root /usr/local/bin/backup.sh" >> /etc/crontab
 
 RUN mkdir -p /backups
 
-ENTRYPOINT ["cron", "-f"]
+CMD ["cron", "-f"]

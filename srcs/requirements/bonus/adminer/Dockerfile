@@ -7,4 +7,4 @@ COPY ./tools/setup.sh ./
 
 RUN chmod +x ./setup.sh && ./setup.sh
 
-ENTRYPOINT [ "php", "-S", "0.0.0.0:8080", "-t", "/var/www/html" ]
+CMD [ "php", "-S", "0.0.0.0:8080", "-t", "/var/www/html" ]
