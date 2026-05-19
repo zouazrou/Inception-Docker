@@ -10,7 +10,7 @@
 ### Starting
 
 ```bash
-git clone https://github.com/zouazrou/INCEPTION.git
+git git@github.com:zouazrou/Inception-Docker.git
 cd INCEPTION
 make all
 ```
