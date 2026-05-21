@@ -24,7 +24,7 @@ Set up a complete infrastructure using Docker Compose, creating and managing mul
 1. Clone the repository and enter the folder:
 ```bash
 git git@github.com:zouazrou/Inception-Docker.git
-cd INCEPTION
+cd Inception-Docker
 ```
 2. Build image and Run containers:
 ```bash
@@ -48,3 +48,7 @@ make fclean
 * [Nginx Essentials: Installation and Configuration Troubleshooting](https://www.digitalocean.com/community/tutorials/nginx-essentials-installation-and-configuration-troubleshooting)
 * [Configuring the FTP Server](https://docs.openeuler.org/en/docs/22.03_LTS/docs/Administration/configuring-the-ftp-server.html)
 * [Redis configuration](https://redis.io/docs/latest/operate/oss_and_stack/management/config/)
+## AI Usage
+- Help in creating configuration and troubleshooting of Docker and services.
+- Correcting grammar and improving readability of documentation.
+- Providing review and suggestions for the project structure.
