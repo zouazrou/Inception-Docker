@@ -43,10 +43,9 @@ All services configured via `.env` file:
 
 ## Volumes
 
-- `nginx_vol`: SSL certificates
-- `wordpress_vol`: WordPress files
-- `mariadb_vol`: Database files
-
+- `wordpress_files`: WordPress files
+- `mariadb_data`: Database files
+- `db_backups`: Database backups
 Data persists across container restarts.
 
 ## Networking
