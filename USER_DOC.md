@@ -20,14 +20,14 @@ make all
 #### WordPress
 - **URL**: https://localhost
 - **Admin**: https://localhost/wp-admin
-- **Username**: `admin`
+- **Username**: See `.env` file (`WP_ADMIN_USER`)
 - **Password**: See `.env` file (`WP_ADMIN_PASS`)
 
 #### MariaDB
 - **Host**: `mariadb`
 - **Port**: `3306`
 - **Root Password**: See `.env` file (`DB_ROOT_PASS`)
-- **Database User**: `wordpress`
+- **Database User**: See `.env` file (`DB_USER`)
 - **Database Password**: See `.env` file (`DB_PASS`)
 
 ### Commands
