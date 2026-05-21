@@ -47,3 +47,4 @@ make fclean
 * [the reference documentation for Docker](https://docs.docker.com/reference/)
 * [Nginx Essentials: Installation and Configuration Troubleshooting](https://www.digitalocean.com/community/tutorials/nginx-essentials-installation-and-configuration-troubleshooting)
 * [Configuring the FTP Server](https://docs.openeuler.org/en/docs/22.03_LTS/docs/Administration/configuring-the-ftp-server.html)
+* [Redis configuration](https://redis.io/docs/latest/operate/oss_and_stack/management/config/)
