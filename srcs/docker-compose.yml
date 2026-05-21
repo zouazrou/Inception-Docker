@@ -78,7 +78,13 @@ services:
         required: true
   ftp:
     restart: always
-    build: ./requirements/bonus/ftp-server/.
+    build:
+        context: ./requirements/bonus/ftp-server/.
+        dockerfile: Dockerfile
+        args:
+          FTP_USER: ${FTP_USER}
+          FTP_PASS: ${FTP_PASS}
+
     container_name: ftp
     image: ftp:1337
     ports:
