@@ -4,6 +4,6 @@
 BACKUP_FILE="/backups/backup_$(date +%F_%H-%M).sql"
 
 # Uses the variables already defined in your .env file!
-mysqldump -h mariadb -u "$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" > "$BACKUP_FILE"
+mysqldump -h mariadb -u "$DB_USER" -p"$DB_PASS" "$DB_NAME" > "$BACKUP_FILE"
 
 echo "Backup created: $BACKUP_FILE"
